@@ -1,9 +1,9 @@
 {
-  "commitMessage": "vault backup: {{date}}",
-  "autoCommitMessage": "vault backup: {{date}}",
+  "commitMessage": "notes: update {{numFiles}} files ({{date}})",
+  "autoCommitMessage": "notes: update {{numFiles}} files ({{date}})",
   "commitMessageScript": "",
   "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
-  "autoSaveInterval": 15,
+  "autoSaveInterval": 240,
   "autoPushInterval": 1,
   "autoPullInterval": 15,
   "autoPullOnBoot": true,

