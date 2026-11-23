@@ -28,4 +28,8 @@ category='+UNION+SELECT+username_rrbljq,password_lzvmno+FROM+users_twvbrq--
 ```
 
 ![](SQL%20injection%20attack,%20listing%20the%20database%20contents%20on%20non-Oracle%20databases.md_Attachments/-20261123-2.png)
+
+![](SQL%20injection%20attack,%20listing%20the%20database%20contents%20on%20non-Oracle%20databases.md_Attachments/-20261123-3.png)
+
 **What I learned:**
+We can use the information_schema.tables to get relevant table and column information using the UNION and can retrieve the passwords and usernames and other interesting information.
