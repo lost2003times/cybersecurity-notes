@@ -1,6 +1,6 @@
 {
   "newLinkFormat": "relative",
-  "attachmentFolderPath": "./SQL injection UNION attack, retrieving multiple values in a single column.md_Attachments",
+  "attachmentFolderPath": "./SQL injection attack, listing the database contents on non-Oracle databases.md_Attachments",
   "newFileLocation": "root",
   "useMarkdownLinks": true,
   "alwaysUpdateLinks": true
