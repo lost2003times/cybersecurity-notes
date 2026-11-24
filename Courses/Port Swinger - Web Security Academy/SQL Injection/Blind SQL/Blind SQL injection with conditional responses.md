@@ -22,9 +22,19 @@ TrackingId=sp6noqfqdKnsOAvQ' AND (SELECT 'a' FROM users LIMIT 1) = 'a'--; sessio
 ![](Blind%20SQL%20injection%20with%20conditional%20responses.md_Attachments/-20261124-1.png)
 
 ```
+Cookie: TrackingId=sp6noqfqdKnsOAvQ' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password) > 1) = 'a'--; session=gRAlBYLyISNtGfILsTEgbL9CnCydI2Zg
+```
+
+- We used this query to determine the length of the password, and this query is asking the database that is the password of the username = administrator greater than 1 and the 'Welcome back' message is visible but this process will take a lot of time so we use a tool which burp suite offers for such situations.
+- We send this request to the intruder and select the LENGTH(password) > ==🔴1==) as our payload and we do the sniper attack on it with the numbers spanning from 1 to 50 with the step 1 so it goes through all the numbers one by one till 50 and we get the welcome back in all the responses till the LENGTH(password) > ==🔴20==), which tells us that the password length is 20.
+
+```
 Cookie: TrackingId=sp6noqfqdKnsOAvQ' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator') = 'a'--; session=gRAlBYLyISNtGfILsTEgbL9CnCydI2Zg
 ```
 
-- Used this query to compare the first letter of the password with 'a' and we can do this for all the letters one by one but that is an 
+- Used this query to compare the first letter of the password with 'a' and we can do this for all the letters one by one to figure out the whole password. In SUBSTRING(password,1,1) the the middle 1 is the places of the characters in the password.
+- Similarly this can be deal
+
+
 
 **What I learned:**
