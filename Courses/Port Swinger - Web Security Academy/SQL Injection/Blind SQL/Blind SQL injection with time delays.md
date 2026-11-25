@@ -3,8 +3,8 @@ topic: SQL injection
 level: Practitioner
 time_spent: 15 mins
 date: 25th Nov, 2026
+Database type: PostgreSQL
 ---
-
 **Vulnerability:** 
 This lab contains a blind SQL injection vulnerability. The application uses a tracking cookie for analytics, and performs a SQL query containing the value of the submitted cookie.
 

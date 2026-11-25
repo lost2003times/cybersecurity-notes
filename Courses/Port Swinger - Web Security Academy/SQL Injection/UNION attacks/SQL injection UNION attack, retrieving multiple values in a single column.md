@@ -3,6 +3,7 @@ topic: SQL injection
 level: Practitioner
 time_spent: 15 mins
 date: 22 Nov, 2026
+Database type: PostgreSQL
 ---
 
 **Vulnerability:** 
