@@ -1,7 +1,7 @@
 ---
 topic: SQL injection
-level: Apprentice
-time_spent:
+level: Practitioner
+time_spent: 1 hour
 date: 25th Nov, 2026
 Database type: Oracle
 ---
