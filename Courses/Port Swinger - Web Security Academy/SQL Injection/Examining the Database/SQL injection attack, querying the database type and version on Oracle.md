@@ -5,8 +5,6 @@ time_spent: 10 mins
 date: 23rd Nov, 2026
 Database type: Oracle
 ---
-
-
 **Vulnerability:** 
 SQL injection vulnerability in the product category filter.
 

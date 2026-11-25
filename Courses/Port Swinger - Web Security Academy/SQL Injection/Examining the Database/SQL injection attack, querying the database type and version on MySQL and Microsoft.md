@@ -3,6 +3,7 @@ topic: SQL injection
 level: Practitioner
 time_spent: 10 mins
 date: 23rd Nov, 2026
+Database type: MySQL and Microsoft
 ---
 
 **Vulnerability:** 

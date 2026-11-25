@@ -1,6 +1,6 @@
 {
   "newLinkFormat": "relative",
-  "attachmentFolderPath": "./SQL injection attack, querying the database type and version on Oracle.md_Attachments",
+  "attachmentFolderPath": "./SQL injection UNION attack, determining the number of columns returned by the query.md_Attachments",
   "newFileLocation": "root",
   "useMarkdownLinks": true,
   "alwaysUpdateLinks": true
