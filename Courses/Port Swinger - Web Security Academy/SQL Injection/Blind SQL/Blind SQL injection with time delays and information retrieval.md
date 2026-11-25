@@ -79,5 +79,6 @@ print(f"\n[+] administrator password: {password}")
 ```
 
 ![](Blind%20SQL%20injection%20with%20time%20delays%20and%20information%20retrieval.md_Attachments/-20261125-1.png)
-**What I learned:**
+
+![](Blind%20SQL%20injection%20with%20time%20delays%20and%20information%20retrieval.md_Attachments/Screenshot%20(87).png)
 
