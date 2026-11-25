@@ -3,6 +3,7 @@ topic: SQL injection
 level: Practitioner
 time_spent: 2.5 hours
 date: 24th Nov,2026
+Database type: Oracle
 ---
 
 **Vulnerability:** 
